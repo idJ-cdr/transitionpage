@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <title>Inicio – IDJ Casa de Refugio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    header {
+      background: url('https://i.postimg.cc/JhPBMXVL/IMG-2586.jpg') center center / cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 1;
+      margin: 0.5em 0;
+    }
+
+    nav {
+      background: #362062;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px 15px;
+      flex-wrap: wrap;
+    }
+
+    nav a, .lang-btn {
+      color: white;
+      text-decoration: none;
+      margin: 10px;
+      font-weight: 600;
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .container {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      margin-top: 20px;
+    }
+
+    .logo {
+      max-width: 200px;
+      height: auto;
+      margin: 0 auto 20px;
+      display: block;
+    }
+
+    .email-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 24px;
+      background-color: #007BFF;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .email-button:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      background: #4A2D81;
+      color: white;
+      text-align: center;
+      padding: 20px 15px;
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* Tablet adjustments */
+    @media (max-width: 768px) {
+      header {
+        padding: 40px 15px;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      .logo {
+        max-width: 150px;
+      }
+
+      .email-button {
+        width: 100%;
+      }
+
+      .container {
+        padding: 25px 15px;
+      }
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 480px) {
+      nav {
+        flex-direction: column;
+        padding: 10px 0;
+      }
+
+      nav a, .lang-btn {
+        font-size: 0.95rem;
+        margin: 5px 0;
+      }
+
+      .section {
+        padding: 30px 10px;
+      }
+
+      .container {
+        padding: 20px 12px;
+      }
+
+      html {
+        font-size: 15px;
+      }
+
+      .email-button {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+
+  <script>
+    function toggleLanguage() {
+      const isSpanish = document.documentElement.lang === "es";
+      document.documentElement.lang = isSpanish ? "en" : "es";
+
+      document.getElementById('slogan').textContent = isSpanish
+        ? '"A place of hope and restoration"'
+        : '"Un lugar de esperanza y restauración"';
+
+      document.getElementById('welcome-heading').textContent = isSpanish ? 'Welcome!' : '¡Bienvenido!';
+      document.getElementById('msg-1').textContent = isSpanish
+        ? 'Thank you for visiting IDJ Casa de Refugio. We are currently undergoing a change.'
+        : 'Gracias por visitar IDJ Casa de Refugio. Estamos en proceso de cambio.';
+      document.getElementById('msg-2').textContent = isSpanish
+        ? 'The transition may take until 07/18/25. Our new site will be available at:'
+        : 'La transición puede tardar hasta 07/18/25. Nuestro nuevo sitio estará disponible en:';
+      document.getElementById('msg-3').textContent = isSpanish
+        ? 'Thank you for your understanding.'
+        : 'Gracias por su comprensión.';
+      document.getElementById('msg-4').textContent = isSpanish
+        ? 'Tech Team'
+        : 'Equipo Técnico';
+      document.getElementById('email-button').textContent = isSpanish
+        ? 'Contact Tech Team'
+        : 'Contactar al equipo técnico';
+      document.querySelector('.lang-btn').textContent = isSpanish ? "English" : "Español";
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1>IDJ Casa de Refugio</h1>
+    <p id="slogan">"Un lugar de esperanza y restauración"</p>
+  </header>
+
+  <nav>
+    <button class="lang-btn" onclick="toggleLanguage()">English</button>
+  </nav>
+
+  <section class="section">
+    <h2 id="welcome-heading">¡Bienvenido!</h2>
+    <div class="container">
+      <img src="https://i.postimg.cc/vHF28pwT/idjcdrlogo-1.png" alt="Logo IDJ Casa de Refugio" class="logo">
+      <p id="msg-1">Gracias por visitar IDJ Casa de Refugio. Estamos en proceso de cambio.</p>
+      <p id="msg-2">La transición puede tardar hasta 07/18/25. Nuestro nuevo sitio estará disponible en:</p>
+      <p><strong>idjcasaderefugio.org</strong></p>
+      <p id="msg-3">Gracias por su comprensión</p>
+      <p><strong id="msg-4">Tech Team</strong></p>
+      <a href="mailto:idjcdr+techteam@gmail.com" class="email-button" id="email-button">Contactar al equipo técnico</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2024 IDJ Casa de Refugio | <a href="inc.html">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>
